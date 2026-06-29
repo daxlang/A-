@@ -1,0 +1,18 @@
+训练模型并保存...
+  MLP1_0 fold=2020 done
+  MLP1_0 fold=2021 done
+  MLP1_0 fold=2022 done
+  MLP1_0 fold=2023 done
+  MLP1_0 fold=2024 done
+  MLP0_5 fold=2020 done
+  MLP0_5 fold=2021 done
+  MLP0_5 fold=2022 done
+  MLP0_5 fold=2023 done
+  MLP0_5 fold=2024 done
+  LR+RF fold=2020 done
+  LR+RF fold=2021 done
+  LR+RF fold=2022 done
+  LR+RF fold=2023 done
+  LR+RF fold=2024 done
+
+评估...
