@@ -290,9 +290,38 @@ erank 高 = 基底丰富 = 真简单; erank 低 = 基底塌缩 = 真难。相比
 
 ## 核心文档
 
-- **[视频文稿_选股ML项目.md](视频文稿_选股ML项目.md)** — 完整视频脚本
 - **[选股模型数据/数据流水线日志.md](选股模型数据/数据流水线日志.md)** — 全部 53 个子实验记录
 - **[核心流程.md](核心流程.md)** — 数据处理和特征工程说明
+
+## 快速开始
+
+```bash
+# 全量训练+部署 (需 GPU, ~60分钟)
+python 选股模型数据/deploy_erank.py
+```
+
+---
+
+## AutoDL 实验脚本
+
+所有课程学习 / 架构扫描 / 权重消融脚本均上传至 `选股模型数据/autoDL_scripts/`, 在 AutoDL 上择需运行。
+
+| 脚本 | 用途 | 运行时间 |
+|---|---|---|
+| `deploy_erank.py` | **erankOnline 全量部署** (2019-2025训练→2026Q1预测) | ~60min |
+| `erank_cl.py` | erank 双维度课程学习 (冻结+在线) 5折CV | ~5h |
+| `curriculum.py` | SPL/Anti/BabyStep 课程学习 5折CV (5000ep) | ~20min |
+| `curriculum_v2.py` | 课程学习v2 (10000ep, 慢节奏) | ~40min |
+| `w_sweep.py` | w值扫描 (6权重, 5000ep) | ~25min |
+| `baby_scan.py` | BabyStep w值扫描 (6权重, 10000ep) | ~40min |
+| `reg_scan.py` | REG512 w/wd 扫描 (6配置) | ~30min |
+| `arch.py` | 架构扫描 (5架构, 5000ep) | ~25min |
+| `arch2.py` | 架构扫描第二轮 (7架构) | ~35min |
+| `consensus.py` | REG + RF 共识 5折CV | ~1min |
+| `prune.py` | Cartography 去Hard剪枝 (6比例) | ~50min |
+| `converge.py` | 收敛检查 (基线vsSPL 10000ep) | ~10s |
+
+注: 除 `consensus.py` 和 `converge.py` 外均需 GPU 运行。
 
 ---
 
